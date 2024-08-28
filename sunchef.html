@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUN CHEF - The Rat Toy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFFF00; /* Yellow background */
+            color: #333;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #f9d423; /* Light golden color */
+            padding: 20px;
+            position: relative;
+        }
+        .logo {
+            font-size: 5em;
+            font-weight: bolder;
+            color: darkred;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: logoAnimation 2s infinite;
+            font-family:  sans-serif; /* Fancy text font */
+        }
+        @keyframes logoAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .social-section {
+            border: 5px solid red; /* Thick red border */
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .social-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .social-links {
+            list-style: none;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .social-links a {
+            font-size: 4em; /* Very large icons */
+            color: #007bff; /* Blue color */
+            text-decoration: none;
+            animation: dance 2s infinite;
+        }
+        .social-links a:hover {
+            color: #0056b3; /* Darker blue for hover effect */
+        }
+        @keyframes dance {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            50% { transform: rotate(-15deg); }
+            75% { transform: rotate(15deg); }
+        }
+        .content {
+            margin: 20px;
+            animation: fadeIn 3s ease-in-out;
+            font-size: 1.5em; /* Adjusted font size */
+            font-weight: bold;
+            color: red; /* Text color red */
+            background: linear-gradient(135deg, #fff, #ffc371); /* Gradient background */
+            padding: 20px;
+            border-radius: 15px;
+            border: 3px solid red; /* Red border */
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .content-rotate {
+            display: inline-block;
+            animation: rotateAndScale 7s infinite;
+        }
+        @keyframes rotateAndScale {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        .rat-gif {
+            width: 60%;
+            max-width: 300px;
+            border-radius: 50%;
+            border: 5px solid red;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .image-gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            animation: imageAnimation 5s infinite;
+        }
+        @keyframes imageAnimation {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+        footer {
+            margin: 20px;
+        }
+
+        /* New Styles for Additional Texts */
+        .additional-text {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 20px;
+            margin: 20px;
+            color: yellow; /* Black text color */
+            background: linear-gradient(135deg, #00f, #000); /* Blue and black gradient background */
+            border-radius: 15px;
+            border: 5px solid #000; /* Black border */
+            animation: shapeAndSizeChange 5s infinite; /* Apply the new animation */
+        }
+
+        .additional-text h2 {
+            font-size: 2em;
+            color: #fff; /* White color */
+            border: 3px solid #00f; /* Blue border */
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #000; /* Black background */
+        }
+
+        /* Animation for changing shape and size */
+        @keyframes shapeAndSizeChange {
+            0% {
+                border-radius: 15px; /* Box shape */
+                transform: scale(1); /* Normal size */
+            }
+            50% {
+                border-radius: 50%; /* Circle shape */
+                transform: scale(1.2); /* Slightly larger */
+            }
+            100% {
+                border-radius: 15px; /* Box shape again */
+                transform: scale(1); /* Normal size */
+            }
+        }
+
+        /* Keyframes for dancing animation */
+        @keyframes dancing {
+            0% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(-10deg); }
+            50% { transform: translateY(0) rotate(10deg); }
+            75% { transform: translateY(-10px) rotate(-10deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        /* Class to apply dancing animation to the image */
+.dancing-image {
+    animation: dancing 2s infinite;
+    width: 100%; /* Full width for small screens */
+    max-width: 400px; /* Limit maximum width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Keyframes for dancing animation */
+@keyframes dancing {
+    0% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(-10deg); }
+    50% { transform: translateY(0) rotate(10deg); }
+    75% { transform: translateY(-10px) rotate(-10deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Responsive Styles for the Dancing Image */
+@media (max-width: 600px) {
+    .dancing-image {
+        width: 90%; /* Adjust width to fit small screens */
+        max-width: 300px; /* Further limit maximum width on small screens */
+    }
+}
+
+
+/* Dancing Animation */
+@keyframes dance {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">SUN CHEF</div>
+    </header>
+
+    <div class="image-galler">
+        <img src="images/sunchef.jpg" alt="Rat wearing clothes" class="dancing-image">
+    </div>
+
+    <div class="content">
+        <p class="content-rotate"><strong>Hello meet SUN CHEF – Justin Sun’s Favorite Chef!</strong></p>
+    </div>
+
+    <div class="image-gallery">
+        <img src="images/rat1.png" alt="Rat wearing clothes">
+    </div>
+
+    <div class="content">
+        <p><strong>The Tastiest Meme Coin in the Crypto Kitchen!</strong></p>
+        <p>In a world where crypto projects are as abundant as grains of rice, it takes something truly special to stand out. That’s where SUN CHEF comes in – the chef rat with a knack for cooking up the most flavorful financial recipes! SUN CHEF isn’t just any chef – he’s the one and only personal chef to Justin Sun, the visionary behind TRON!</p>
+    </div>
+
+    <div class="image-gallery">
+        <img src="images/rat4.jpg" alt="Rat wearing clothes">
+    </div>
+
+    <div class="content">
+        <h2><strong>Why SUN CHEF? Because Who Doesn’t Love a Good Meme?</strong></h2>
+        <p>In the chaotic kitchen of the crypto world, SUN CHEF is here to spice things up. This meme coin isn’t just another dish on the menu – it’s a full-course experience. Whether you’re a seasoned crypto investor or just here for the laughs, SUN CHEF promises to deliver with a dash of humor, a sprinkle of community spirit, and a generous helping of flavor.</p>
+    </div>
+
+    <div class="image-gallery">
+        <div class="additional-text">
+            <h2>Ready to start cooking with Sun Chef?</h2>
+            <p>Join our community on social media platforms and be part of the most delicious meme coin adventure on the TRON network!</p>
+        </div>
+    </div>
+
+    <div class="image-gallery">
+        <img src="images/catoon.gif" alt="Rat wearing clothes">
+    </div>
+
+    <div class="social-section">
+        <h2>Let's cook here</h2>
+        <ul class="social-links">
+            <li><a href="https://t.me/+lclEsYJZYidkNGFk" target="_blank" class="fab fa-telegram-plane"></a></li>
+            <li><a href="https://x.com/SunChef_trx?t=L1mPKVmXiuIfx_mPT_t-vA&s=09" target="_blank" class="fab fa-twitter"></a></li>
+        </ul>
+    </div>
+
+    <img src="images/rat2.png" alt="Rat wearing clothes">
+    
+      <div class="content">
+        <h2><strong>The Story of SUN CHEF – Cooking Up Crypto Magic</strong></h2>
+        <p>Legend has it that Rembo was once a simple rat, scurrying through the back alleys, dreaming of one day becoming a world-renowned chef. But fate had other plans. One day, he stumbled upon the TRON network and quickly realized that his true calling wasn’t in cooking food, but in cooking up a delicious new cryptocurrency. Now, he’s here to share his culinary crypto creations with the world!</p>
+    </div>
+
+    <div class="content">
+        <h2 style="color:black; font-weight:900"><strong>What’s on the Menu?</strong></h2>
+        <ul>
+            <li><strong>Deliciously Simple</strong>: Easy to buy, hold, and trade, SUN CHEF is a meme coin designed for everyone – from crypto novices to seasoned pros.</li>
+            <li><strong>Community-Driven</strong>: Join our vibrant community of SUN CHEF enthusiasts who share a love for great memes, good vibes, and of course, the best crypto chef in the game.</li>
+            <li><strong>Special Dishes</strong>: Keep an eye out for special events, exclusive NFTs, and more as SUN CHEF continues to whip up surprises in the crypto kitchen.</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h2><strong>Join the SUN CHEF Revolution</strong></h2>
+        <p>Why settle for bland when you can have bold? SUN CHEF is more than just a coin – it’s a movement. A movement that says, "Let’s not take ourselves too seriously, but let’s still have a lot of fun (and even make good dough along the way)." So grab a seat at the table, and let’s cook up something incredible together.</p>
+    </div>
+
+    <!-- Additional Texts -->
+    <div class="additional-text">
+        <h2>Don’t miss out on the hottest crypto dish!</h2>
+        <p>Buy Sun Chef now and taste the flavor of financial freedom!</p>
+    </div>
+
+    <div class="additional-text">
+        <h2>Stay tuned for Sun Chef’s secret recipes!</h2>
+        <p>Sign up for our newsletter and get the latest updates straight from Sun Chef's kitchen!</p>
+    </div>
+
+    <img src="images/ratpoint.jpg" alt="Rat wearing clothes" style="width: 40%">
+
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>
